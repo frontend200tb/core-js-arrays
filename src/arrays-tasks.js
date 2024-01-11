@@ -22,8 +22,7 @@
  */
 function getIntervalArray(start, end) {
   const n = end - start + 1;
-  const array = Array.from({ length: n }, (_, i) => i + start);
-  return array;
+  return Array.from({ length: n }, (_, i) => i + start);
 }
 
 /**
@@ -49,13 +48,12 @@ function sumArrays(arr1, arr2) {
     array = [].concat(arr2);
     arraySmall = [].concat(arr1);
   }
-  const result = array.map((el, ind) => {
+  return array.map((el, ind) => {
     if (arraySmall[ind]) {
       return el + arraySmall[ind];
     }
     return el;
   });
-  return result;
 }
 
 /**
@@ -89,13 +87,12 @@ function findElement(arr, value) {
  *    findAllOccurrences([ true, 0, 1, 'true' ], true) => 1
  */
 function findAllOccurrences(arr, item) {
-  const counter = arr.reduce((acc, ind) => {
+  return arr.reduce((acc, ind) => {
     if (ind === item) {
       return acc + 1;
     }
     return acc;
   }, 0);
-  return counter;
 }
 
 /**
@@ -111,10 +108,9 @@ function findAllOccurrences(arr, item) {
  *    removeFalsyValues([ false, 0, NaN, '', undefined ]) => [ ]
  */
 function removeFalsyValues(arr) {
-  const newArr = arr.filter((elem) => {
+  return arr.filter((elem) => {
     return !!elem;
   });
-  return newArr;
 }
 
 /**
@@ -127,8 +123,10 @@ function removeFalsyValues(arr) {
  *    getStringsLength([ '', 'a', 'bc', 'def', 'ghij' ]) => [ 0, 1, 2, 3, 4 ]
  *    getStringsLength([ 'angular', 'react', 'ember' ]) => [ 7, 5, 5 ]
  */
-function getStringsLength(/* arr */) {
-  throw new Error('Not implemented');
+function getStringsLength(arr) {
+  return arr.map((elem) => {
+    return elem.length;
+  });
 }
 
 /**
